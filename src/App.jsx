@@ -1,12 +1,30 @@
 
-import './App.css'
-import Header from './header'
-function App(){
+
+import './App.css';
+import { useState } from 'react';
+import Header from './components/header'
+import ProductList from './components/products/productList';
+
+function App() {
+  //carrito
+  const [allProducts,setAllProducts]=useState([])
+
   return (
-    <div>
-      <Header logo="CSS"/>
-    </div>
-  )
+    <>
+    <Header
+    allProducts={allProducts}
+    setAllProducts={setAllProducts}
+
+
+    />
+      <ProductList
+      
+      allProducts={allProducts}
+      setAllProducts={setAllProducts}
+     
+      />
+    </>
+  );
 }
 
-export default App
+export default App;
